@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#
+# Sets your current branch to track the remote branch.
+
+branch=$(git rev-parse --abbrev-ref HEAD)
+
+git branch -u origin/$branch

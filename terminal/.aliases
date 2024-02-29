@@ -1,0 +1,147 @@
+# Shortcuts
+
+## Copy ssh key
+alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
+
+## Use "g" instead of "git", but preserve git-completion
+alias g="git"
+
+# Reload shell
+alias reloadshell="omz reload"
+
+## Shrug
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
+
+## Use "y" instead of "yarn"
+alias y="yarn"
+
+alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -AhlFo --color --group-directories-first"
+
+# Directories
+WORKSPACE_DIR="${HOME}/workspace"
+
+MITHRIN_DIR="${WORKSPACE_DIR}/mithrin"
+ZEN_PAYROLL_DIR="${WORKSPACE_DIR}/zenpayroll"
+
+alias dotfiles="cd ${HOME}/dotfiles"
+alias library="cd ${HOME}/Library"
+alias workspace="cd ${WORKSPACE_DIR}"
+
+alias mithrin="cd ${MITHRIN_DIR}"
+alias zenpayroll="cd ${ZEN_PAYROLL_DIR}"
+
+# JS
+alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
+alias watch="npm run dev"
+
+# Git
+# alias compile="commit 'compile'"
+# alias gst="git status"
+# alias gb="git branch"
+# alias gc="git checkout"
+# alias gl="git log --oneline --decorate --color"
+# alias amend="git add . && git commit --amend --no-edit"
+# alias commit="git add . && git commit -m"
+# alias diff="git diff"
+# alias force="git push --force"
+# alias nuke="git clean -df && git reset --hard"
+# alias pop="git stash pop"
+# alias pull="git pull"
+# alias push="git push"
+# alias resolve="git add . && git commit --no-edit"
+# alias stash="git stash -u"
+# alias unstage="git restore --staged ."
+# alias version="commit 'version'"
+# alias wip="commit wip"
+
+# Utility
+
+## Find file by name
+alias fn='find . -name '
+
+## Search history
+alias hs="history | grep --color=auto"
+
+## QuickLook file
+alias qlf='qlmanage -p '$@' >& /dev/null'
+
+## Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+	export LS_COLORS='no=00:fi=00:di=01;31:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+else # macOS `ls`
+	colorflag="-G"
+	export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
+fi
+
+## List all files colorized in long format
+alias l="ls -lF ${colorflag}"
+
+## List all files colorized in long format, excluding . and ..
+alias la="ls -lAF ${colorflag}"
+
+## Always use color output for `ls`
+alias ls="command ls ${colorflag}"
+
+## List only directories
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Google Chrome
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# Clean up LaunchServices to remove duplicates in the “Open With” menu
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+
+# Ardius
+# dbA
+# Update Mithrin Application DB
+alias dbA='bin/rake db:migrate'
+
+# installA
+# Install Mithrin Application Ruby and NPM dependencies
+alias installA='bundle install && rm -rf node_modules && yarn install'
+
+# startA
+# Shortcut to open a new iTerm window to compile the Mithrin Application and start the local webserver
+alias startA="iterm ${MITHRIN_DIR} yarn start"
+
+# updateA
+# Update Mithrin Application Ruby and NPM dependencies and DB updates
+alias updateA='bundle install && yarn && bin/rake db:migrate'
+
+# Gusto
+# resetDb
+# Reset ZenPayroll Application DB
+alias resetDb='bin/setup --reset-db'
+
+# startZp
+# Shortcut to open a new iTerm window to compile the Mithrin Application and start the local webserver
+alias startZp="iterm ${ZEN_PAYROLL_DIR} bin/setup && bin/server"
+
+unset ZEN_PAYROLL_DIR
+unset MITHRIN_DIR
+unset WORKSPACE_DIR
