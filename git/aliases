@@ -178,6 +178,9 @@
 	# Shortcut for help
 	h = help
 
+	# Open jira ticket
+	jira = "!f() { local branch_name=$(git brn); local url='https://jira.gustocorp.com/browse/'; open-in-browser ${url}${branch_name}; exit; }; f"
+
 	# List ignored files
 	ls-ignored = ls-files --exclude-standard --ignored --others
 
