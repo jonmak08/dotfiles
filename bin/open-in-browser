@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+usage()
+{
+cat << EOF
+usage: $0 options
+
+This script will open a URL in the web browser.
+
+OPTIONS:
+  -h  Show this message
+  -a  The web browser
+  -p  The specified page at the url
+  -u  Specify the URL
+EOF
+}
+
+while getopts 'habu:' OPTION
+do
+   case $OPTION in
+     h)
+      usage
+      exit 1
+      ;;
+     a)
+      BROWSER=${OPTARG}
+      ;;
+     p)
+      PAGE=${OPTARG}
+      ;;
+     u)
+      URL=${OPTARG}
+      ;;
+     ?)
+      usage
+      exit
+      ;;
+   esac
+done
+shift "$(($OPTIND -1))"
+
+if [[ !$BROWSER ]]; then
+  BROWSER="Google Chrome"
+fi
+
+if [[ !$URL ]]; then
+  URL='https://jira.gustocorp.com/browse/'
+fi
+
+if [[ $(git rev-parse --is-inside-work-tree 2>&1) == true ]]; then
+  PAGE=$(git rev-parse --abbrev-ref HEAD)
+fi
+
+open -a "${BROWSER}" ${URL}${PAGE}
