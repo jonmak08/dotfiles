@@ -131,7 +131,7 @@ alias startA="iterm ${MITHRIN_DIR} yarn start"
 
 # updateA
 # Update Mithrin Application Ruby and NPM dependencies and DB updates
-alias updateA='bundle install && yarn && bin/rake db:migrate'
+alias updateA='installA && dbA'
 
 # Gusto
 # resetDb
