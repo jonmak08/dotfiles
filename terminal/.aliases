@@ -119,7 +119,7 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 # Ardius
 # dbA
 # Update Mithrin Application DB
-alias dbA='bin/rake db:migrate'
+alias dbA='bin/rails db:migrate'
 
 # installA
 # Install Mithrin Application Ruby and NPM dependencies
