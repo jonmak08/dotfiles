@@ -1,0 +1,17 @@
+# Exports
+
+# User configuration
+
+# Default Editor
+export EDITOR='mate -w'
+
+# Avoid issues with `gpg` as installed via Homebrew.
+# https://stackoverflow.com/a/42265848/96656
+export GPG_TTY=$TTY
+
+## Increase Bash history size. Allow 32³ entries; the default is 500.
+export HISTSIZE='32768';
+export HISTFILESIZE="${HISTSIZE}";
+
+## Omit duplicates and commands that begin with a space from history.
+export HISTCONTROL='ignoreboth';

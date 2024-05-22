@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# Get the default branch name of Git
+#
+# USAGE:
+#  $ default-branch
+#  # => returns `master` or `main`
+
+default_remote_branch_name=$(git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4)
+
+echo $default_remote_branch_name

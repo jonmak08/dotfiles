@@ -1,0 +1,127 @@
+# Taps
+tap 'homebrew/bundle'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
+tap 'homebrew/services'
+
+# Binaries
+## CLI tools
+brew 'awscli'
+brew 'gh'
+brew 'git'
+brew 'git-gui'
+brew 'git-lfs'
+brew 'jq'
+brew 'pinentry-mac'
+brew 'postgresql'
+brew 'redis'
+brew 'yarn'
+
+## Editors
+brew 'vim' # Install more recent versions of the macOS tool
+
+## Media Libraries
+brew 'ffmpeg'
+brew 'pkg-config' # Dependency of `imagemagick`
+brew 'imagemagick'
+brew 'jpegoptim'
+brew 'pngquant'
+brew 'svgo'
+
+## Misc
+brew 'bitwarden-cli'
+# brew 'gnu-sed'# Install GNU `sed`, overwriting the built-in `sed`.
+brew 'gnupg' # Install GnuPG to enable PGP-signing commits.
+brew 'mackup'
+brew 'mas' # Mac App Store manager
+brew 'p7zip'
+
+## Programming languages
+# brew 'node'
+brew 'nvm'
+brew 'rbenv'
+# brew 'ruby'
+
+## Terminals
+brew 'bash' # Install a modern version of Bash.
+brew 'bash-completion'
+brew 'bash-git-prompt'
+brew 'zsh'
+brew 'zsh-autosuggestions'
+brew 'zsh-syntax-highlighting'
+
+
+## Utils
+brew 'ack'
+### Install GNU core utilities (those that come with macOS are outdated).
+### Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+# brew 'coreutils'
+# brew 'docutils'
+# brew 'findutils'
+# brew 'grep'
+# brew 'less'
+# brew 'rename'
+
+## Zsh theme
+brew 'powerlevel10k'
+
+# Apps
+cask 'alfred'
+cask 'appcleaner'
+cask 'betterzip'
+cask 'bitwarden'
+cask 'caffeine'
+cask 'dbeaver-community'
+# cask 'dbngin'
+cask 'diffmerge'
+cask 'evernote'
+cask 'firefox'
+cask 'fork'
+cask 'gimp'
+cask 'github'
+cask 'gpg-suite'
+cask 'iterm2'
+cask 'imageoptim'
+cask 'intellij-idea'
+cask 'karabiner-elements'
+cask 'monolingual'
+cask 'paintbrush'
+cask 'postman'
+cask 'rectangle'
+cask 'session-manager-plugin'
+cask 'spotify'
+cask 'sublime-text'
+cask 'the-unarchiver'
+cask 'textexpander'
+cask 'textmate'
+cask 'xit'
+cask 'visual-studio-code'
+cask 'vlc'
+cask 'whatsapp'
+
+## Gusto managed via Managed Software Center
+# cask '1password'
+# cask 'docker'
+# cask 'google-chrome'
+# cask 'slack'
+# cask 'zoom'
+
+## Quicklook
+cask 'qlcolorcode'
+cask 'qlmarkdown'
+cask 'qlimagesize'
+cask 'qlprettypatch'
+cask 'qlstephen'
+cask 'quicklook-csv'
+cask 'quicklook-json'
+
+## Fonts
+cask 'font-hack-nerd-font'
+cask 'font-open-sans'
+cask 'font-roboto'
+cask 'font-source-code-pro-for-powerline'
+cask 'font-source-code-pro'
+
+## Mac App Store
+mas 'Keynote', id: 409183694
+mas 'Numbers', id: 409203825
