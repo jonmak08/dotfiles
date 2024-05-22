@@ -1,0 +1,36 @@
+[submodule "themes/iterm"]
+	path = themes/dracula/iterm
+	url = https://github.com/dracula/iterm.git
+[submodule "themes/vscode"]
+	path = themes/dracula/vscode
+	url = https://github.com/dracula/visual-studio-code.git
+[submodule "themes/vim"]
+	path = themes/dracula/vim
+	url = https://github.com/dracula/vim.git
+[submodule "themes/terminal"]
+	path = themes/dracula/terminal
+	url = https://github.com/dracula/terminal-app.git
+[submodule "themes/zsh"]
+	path = themes/dracula/zsh
+	url = https://github.com/dracula/zsh.git
+[submodule "themes/sublime"]
+	path = themes/dracula/sublime
+	url = https://github.com/dracula/sublime.git
+[submodule "themes/alfred"]
+	path = themes/dracula/alfred
+	url = https://github.com/dracula/alfred.git
+[submodule "themes/textmate"]
+	path = themes/dracula/textmate
+	url = https://github.com/dracula/textmate.git
+[submodule "themes/zsh-syntax-highlighting"]
+	path = themes/dracula/zsh-syntax-highlighting
+	url = https://github.com/dracula/zsh-syntax-highlighting.git
+[submodule "themes/gitk"]
+	path = themes/dracula/gitk
+	url = https://github.com/dracula/gitk.git
+[submodule "themes/powerlevel10k"]
+	path = themes/dracula/powerlevel10k
+	url = https://github.com/dracula/powerlevel10k.git
+[submodule "themes/git"]
+	path = themes/dracula/git
+	url = https://github.com/dracula/git.git
