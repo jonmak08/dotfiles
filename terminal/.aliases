@@ -136,7 +136,7 @@ alias resetDb='bin/setup --reset-db'
 
 # startZp
 # Shortcut to open a new iTerm window to compile the Mithrin Application and start the local webserver
-alias startZp="iterm ${ZEN_PAYROLL_DIR} bin/setup && bin/server"
+alias startZp="iterm ${ZEN_PAYROLL_DIR} bin/server"
 
 unset ZEN_PAYROLL_DIR
 unset MITHRIN_DIR
