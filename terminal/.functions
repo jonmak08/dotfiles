@@ -143,3 +143,21 @@ function updateA {
 
 	dbA
 }
+
+# updateZp
+# Update ZenPayroll Application and setup configurations
+function updateZp {
+	zenpayroll
+
+	g som
+
+	cd ../config_files
+
+	./setup.sh
+
+	zenpayroll
+
+	nvm use
+
+	bin/setup
+}
