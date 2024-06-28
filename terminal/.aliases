@@ -115,8 +115,8 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
-
 # Ardius
+
 # dbA
 # Update Mithrin Application DB
 alias dbA='bundle exec bin/rails db:migrate'
