@@ -109,6 +109,14 @@ function pkill {
 	#ps -ef | grep PROCESS | grep -v grep | awk '{print $2}' | xargs kill -9
 }
 
+# railsC
+# Connect to the Rails console on a remote server
+# @arguments server
+function railsC() {
+	mithrin
+
+	./devops/scripts/ecs_execute.rb  -a "$1" -s web -- rails c
+}
 
 # resolve
 # Find the original source of a symlink
