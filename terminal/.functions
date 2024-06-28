@@ -133,3 +133,13 @@ function resolve {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# updateA
+# Update Mithrin Application Ruby and NPM dependencies and DB updates
+function updateA {
+	mithrin
+
+	installA
+
+	dbA
+}
