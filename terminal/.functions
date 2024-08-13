@@ -159,5 +159,7 @@ function updateZp {
 
 	nvm use
 
+	bin/setup -r
+
 	bin/setup
 }
