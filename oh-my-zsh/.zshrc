@@ -148,7 +148,7 @@ unset ZSH_AUTOSUGGESTIONS
 # Activate Dracula theme for zsh-syntax-highlighting
 ZSH_SYNTAX_HIGHLIGHTING="zsh-syntax-highlighting"
 
-[[ -f "~/dotfiles/themes/dracula/${ZSH_SYNTAX_HIGHLIGHTING}/${ZSH_SYNTAX_HIGHLIGHTING}.sh" ]] && source "~/dotfiles/themes/dracula/${ZSH_SYNTAX_HIGHLIGHTING}/${ZSH_SYNTAX_HIGHLIGHTING}.sh"
+[[ -f "${HOME}/dotfiles/themes/dracula/${ZSH_SYNTAX_HIGHLIGHTING}/${ZSH_SYNTAX_HIGHLIGHTING}.sh" ]] && source "${HOME}/dotfiles/themes/dracula/${ZSH_SYNTAX_HIGHLIGHTING}/${ZSH_SYNTAX_HIGHLIGHTING}.sh"
 
 unset ZSH_SYNTAX_HIGHLIGHTING
 
