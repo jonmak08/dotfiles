@@ -174,6 +174,9 @@ BREW_NVM_DIR=$(brew --prefix nvm)
 # Load nvm bash_completion
 [[ -s "${BREW_NVM_DIR}/etc/bash_completion.d/${NVM}" ]] && \. "${BREW_NVM_DIR}/etc/bash_completion.d/${NVM}"
 
+# Load load-nvmrc hook
+[[ -f "${HOME}/dotfiles/${NVM}/load-nvmrc" ]] && source "${HOME}/dotfiles/${NVM}/load-nvmrc"
+
 unset BREW_NVM_DIR
 unset NVM
 
