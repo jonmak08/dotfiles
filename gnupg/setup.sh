@@ -14,6 +14,12 @@ echo "Setting up ${GNUPG}..."
 # Create symlink of ~/.gnupg/gpg-agent.conf from ~/dotfiles/gnupg/gpg-agent.conf
 ln -s "${HOME}/dotfiles/${GNUPG}/gpg-agent.conf" "${GNUPG_DIR}/gpg-agent.conf"
 
+# Rename ~/.gnupg/gpg.conf to /.gnupg/gpg.conf.bak
+[[ -f "${GNUPG_DIR}/gpg.conf" ]] && mv "${GNUPG_DIR}/gpg.conf" "${GNUPG_DIR}/gpg.conf.bak"
+
+# Create symlink of ~/.gnupg/gpg.conf from ~/dotfiles/gnupg/gpg.conf
+ln -s "${HOME}/dotfiles/${GNUPG}/gpg.conf" "${GNUPG_DIR}/gpg.conf"
+
 echo "${GNUPG} setup complete."
 
 unset GNUPG_DIR
