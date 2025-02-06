@@ -1,1 +1,1 @@
-[[ -n "$PS1" ]] && source '~/dotfiles/.bash_profile';
+[[ -n "$PS1" ]] && source "${HOME}/dotfiles/.bash_profile";
