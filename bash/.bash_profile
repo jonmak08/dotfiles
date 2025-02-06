@@ -40,6 +40,9 @@ BREW_NVM_DIR=$(brew --prefix nvm)
 # Load nvm bash_completion
 [[ -s "${BREW_NVM_DIR}/etc/bash_completion.d/${NVM}" ]] && \. "${BREW_NVM_DIR}/etc/bash_completion.d/${NVM}"
 
+# Load cdnvm hook
+[[ -f "${HOME}/dotfiles/${NVM}/cdnvm" ]] && source "${HOME}/dotfiles/${NVM}/cdnvm"
+
 unset BREW_NVM_DIR
 unset NVM
 
@@ -77,3 +80,7 @@ GUSTO_INIT='~/.gusto/init.sh'
 [[ -f $GUSTO_INIT ]] && source $GUSTO_INIT;
 
 unset GUSTO_INIT
+
+# Override cd 
+alias cd='cdnvm'
+cdnvm "$PWD" || exit
