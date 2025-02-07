@@ -12,7 +12,7 @@
 	br = branch
 
 	# Create a branch by name, or if it exists, checkout the branch
-	cb = "!f() { git checkout -b $1 2> /dev/null && echo Created new branch $1 || `git checkout $1`; }; f"
+	cb = "!f() { git switch $1 2>/dev/null || git switch -c $1; }; f"
 
 	# Recreate the current branch (deletes the local and remote, and recreates it)
 	refresh = "!f() { git co $(git default-branch) && git db-all $1; git cb $1; }; f"
