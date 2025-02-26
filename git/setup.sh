@@ -18,10 +18,10 @@ ln -s "${DOT_FILES_GIT_DIR}/.gitconfig" "${HOME}/.gitconfig"
 ln -s "${DOT_FILES_GIT_DIR}/.gitignore_global" "${HOME}/.gitignore_global"
 
 # Setup Git SSH Keys
-./${GIT}/ssh.sh
+${DOT_FILES_GIT_DIR}/ssh.sh
 
 # Clone Git repositories
-./${GIT}/clone.sh
+${DOT_FILES_GIT_DIR}/clone.sh
 
 # Install Dracula theme https://draculatheme.com/gitk
 ## Make git folder in ~/.config
