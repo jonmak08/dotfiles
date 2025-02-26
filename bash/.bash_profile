@@ -74,13 +74,6 @@ if which rbenv > /dev/null; then
 	eval "$(rbenv init - bash)";
 fi
 
-# Gusto Init
-GUSTO_INIT='~/.gusto/init.sh'
-
-[[ -f $GUSTO_INIT ]] && source $GUSTO_INIT;
-
-unset GUSTO_INIT
-
 # Override cd 
 alias cd='cdnvm'
 cdnvm "$PWD" || exit
