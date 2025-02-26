@@ -182,10 +182,3 @@ unset NVM
 
 # Activate rbenv
 eval "$(rbenv init - zsh)"
-
-# Gusto Init
-GUSTO_INIT='~/.gusto/init.sh'
-
-[[ -f $GUSTO_INIT ]] && source $GUSTO_INIT;
-
-unset GUSTO_INIT
