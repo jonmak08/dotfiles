@@ -1,12 +1,3 @@
-# bashC
-# Connect to the bash terminal on a remote server
-# @arguments server
-function bashC() {
-	mithrin
-
-	./devops/scripts/ecs_execute.rb  -a "$1" -s web -- bash
-}
-
 # List all the Homebrew formulas and it's dependencies.
 function brewdeps {
 	brew list | while read cask; do echo -n $fg[blue] $cask $fg[white]; brew deps $cask | awk '{printf(" %s ", $0)}'; echo ""; done
@@ -118,15 +109,6 @@ function pkill {
 	#ps -ef | grep PROCESS | grep -v grep | awk '{print $2}' | xargs kill -9
 }
 
-# railsC
-# Connect to the Rails console on a remote server
-# @arguments server
-function railsC() {
-	mithrin
-
-	./devops/scripts/ecs_execute.rb  -a "$1" -s web -- rails c
-}
-
 # resolve
 # Find the original source of a symlink
 # @arguments path to symlink
@@ -141,34 +123,4 @@ function resolve {
 # small enough for one screen.
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
-}
-
-# updateA
-# Update Mithrin Application Ruby and NPM dependencies and DB updates
-function updateA {
-	mithrin
-
-	installA
-
-	dbA
-}
-
-# updateZp
-# Update ZenPayroll Application and setup configurations
-function updateZp {
-	zenpayroll
-
-	g som
-
-	cd ../config_files
-
-	./setup.sh
-
-	zenpayroll
-
-	nvm use
-
-	bin/setup -r
-
-	bin/setup
 }
