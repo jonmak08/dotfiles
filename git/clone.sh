@@ -16,4 +16,8 @@ git clone git@github.com:Gusto/config_files.git ~/workspace/config_files
 # https://github.com/Gusto/zenpayroll
 git clone git@github.com:Gusto/zenpayroll.git ~/workspace/zenpayroll
 
+
+# Fetch submodule
+git submodule update
+
 echo 'Git repositories setup complete.'
