@@ -164,6 +164,9 @@ unset BREW_PREFIX
 # Activate brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Activate heroku autocomplete https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli
+eval "$(heroku autocomplete:script zsh)"
+
 # Activate nvm
 NVM="nvm"
 BREW_NVM_DIR=$(brew --prefix nvm)
