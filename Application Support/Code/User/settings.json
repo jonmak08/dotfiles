@@ -129,5 +129,6 @@
   "typescript.inlayHints.parameterTypes.enabled": true,
   "typescript.referencesCodeLens.enabled": true,
   "git.openRepositoryInParentFolders": "always",
-  "github.copilot.editor.enableAutoCompletions": true
+  "github.copilot.editor.enableAutoCompletions": true,
+  "cursor.composer.cmdPFilePicker2": true
 }
