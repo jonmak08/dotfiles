@@ -20,12 +20,19 @@ alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -AhlFo --color --group-di
 # Directories
 WORKSPACE_DIR="${HOME}/workspace"
 
-MITHRIN_DIR="${WORKSPACE_DIR}/mithrin"
-ZEN_PAYROLL_DIR="${WORKSPACE_DIR}/zenpayroll"
 
 alias dotfiles="cd ${HOME}/dotfiles"
 alias library="cd ${HOME}/Library"
 alias workspace="cd ${WORKSPACE_DIR}"
+
+# Gumshoe
+EREBOR_DIR="${WORKSPACE_DIR}/erebor"
+
+alias erebor="cd ${EREBOR_DIR}"
+
+# Gusto
+MITHRIN_DIR="${WORKSPACE_DIR}/mithrin"
+ZEN_PAYROLL_DIR="${WORKSPACE_DIR}/zenpayroll"
 
 alias mithrin="cd ${MITHRIN_DIR}"
 alias zenpayroll="cd ${ZEN_PAYROLL_DIR}"
