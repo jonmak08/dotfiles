@@ -20,9 +20,13 @@ alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -AhlFo --color --group-di
 # Directories
 WORKSPACE_DIR="${HOME}/workspace"
 
+EREBOR_DIR="${WORKSPACE_DIR}/erebor"
+
 alias dotfiles="cd ${HOME}/dotfiles"
 alias library="cd ${HOME}/Library"
 alias workspace="cd ${WORKSPACE_DIR}"
+
+alias erebor="cd ${EREBOR_DIR}"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
@@ -108,3 +112,5 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+# Xrossworld
