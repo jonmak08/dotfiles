@@ -39,6 +39,7 @@
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
   "editor.rulers": [80],
+  "editor.wordWrap": "wordWrapColumn",
   "editor.suggest.shareSuggestSelections": true,
   "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.tabCompletion": "on",
