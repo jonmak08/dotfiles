@@ -107,7 +107,7 @@
   "window.title": "${activeEditorShort}${separator}${rootName}${dirty}",
   "window.zoomLevel": 1,
   // Preferred color theme
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula Theme",
   // Your last searched thing in the command palette will pop up and highlighted so that you don't need to type the same thing again if you close it
   "workbench.commandPalette.preserveInput": true,
   "workbench.editor.enablePreviewFromCodeNavigation": false,
