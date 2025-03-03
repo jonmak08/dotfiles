@@ -23,7 +23,7 @@
   // fontLigatures are when multiple characters appear into a single character. Personally I prefer to just have the default behavior of the text
   "editor.fontLigatures": false,
   // Changes how large the font size will be in the editor
-  "editor.fontSize": 13,
+  "editor.fontSize": 12,
   // Formats using our formatter after pasting code
   "editor.formatOnPaste": true,
   // Formats using our formatter after cmd + s (saving)
