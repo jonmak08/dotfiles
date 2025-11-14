@@ -1,8 +1,15 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-[[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] &&
-	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# Detect if we're in agent/automated mode (Cursor AI)
+# Skip fancy prompts for better command execution
+if [[ -n "$TERM_PROGRAM" && "$TERM_PROGRAM" == "iTerm.app" ]] && [[ -o interactive ]]; then
+	export AGENT_MODE=false
+	# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+	# Initialization code that may require console input (password prompts, [y/n]
+	# confirmations, etc.) must go above this block; everything else may go below.
+	[[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] &&
+		source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+else
+	export AGENT_MODE=true
+fi
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -119,47 +126,61 @@ source "${ZSH}/oh-my-zsh.sh"
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-DOT_P10K_ZSH=".p10k.zsh"
+# Only load Powerlevel10k if not in agent mode
+if [[ "$AGENT_MODE" == "false" ]]; then
+	DOT_P10K_ZSH=".p10k.zsh"
 
-[[ -f "${HOME}/${DOT_P10K_ZSH}" ]] && source "${HOME}/${DOT_P10K_ZSH}"
+	[[ -f "${HOME}/${DOT_P10K_ZSH}" ]] && source "${HOME}/${DOT_P10K_ZSH}"
 
-unset DOT_P10K_ZSH
+	unset DOT_P10K_ZSH
 
-BREW_PREFIX=$(brew --prefix)
+	BREW_PREFIX=$(brew --prefix)
 
-# Activate the powerlevel10k zsh theme
-POWERLEVEL10K="powerlevel10k"
-POWERLEVEL10K_ZSH_THEME="${BREW_PREFIX}/share/${POWERLEVEL10K}/${POWERLEVEL10K}.zsh-theme"
+	# Activate the powerlevel10k zsh theme
+	POWERLEVEL10K="powerlevel10k"
+	POWERLEVEL10K_ZSH_THEME="${BREW_PREFIX}/share/${POWERLEVEL10K}/${POWERLEVEL10K}.zsh-theme"
 
-[[ -f $POWERLEVEL10K_ZSH_THEME ]] && source $POWERLEVEL10K_ZSH_THEME
+	[[ -f $POWERLEVEL10K_ZSH_THEME ]] && source $POWERLEVEL10K_ZSH_THEME
 
-unset POWERLEVEL10K_ZSH_THEME
-unset POWERLEVEL10K
+	unset POWERLEVEL10K_ZSH_THEME
+	unset POWERLEVEL10K
+else
+	# Use simple default prompt for agent mode
+	BREW_PREFIX=$(brew --prefix)
+	export PS1="%n@%m:%~$ "
+	export PS2="> "
+fi
 
-# Activate the zsh-autosuggestions zsh plugin
-ZSH_AUTOSUGGESTIONS="zsh-autosuggestions"
-ZSH_AUTOSUGGESTIONS_ZSH="${BREW_PREFIX}/share/${ZSH_AUTOSUGGESTIONS}/${ZSH_AUTOSUGGESTIONS}.zsh"
+# Activate the zsh-autosuggestions zsh plugin (only in non-agent mode)
+if [[ "$AGENT_MODE" == "false" ]]; then
+	ZSH_AUTOSUGGESTIONS="zsh-autosuggestions"
+	ZSH_AUTOSUGGESTIONS_ZSH="${BREW_PREFIX}/share/${ZSH_AUTOSUGGESTIONS}/${ZSH_AUTOSUGGESTIONS}.zsh"
 
-[[ -f $ZSH_AUTOSUGGESTIONS_ZSH ]] && source $ZSH_AUTOSUGGESTIONS_ZSH
+	[[ -f $ZSH_AUTOSUGGESTIONS_ZSH ]] && source $ZSH_AUTOSUGGESTIONS_ZSH
 
-unset ZSH_AUTOSUGGESTIONS_ZSH
-unset ZSH_AUTOSUGGESTIONS
+	unset ZSH_AUTOSUGGESTIONS_ZSH
+	unset ZSH_AUTOSUGGESTIONS
+fi
 
-# Activate Dracula theme for zsh-syntax-highlighting
-ZSH_SYNTAX_HIGHLIGHTING="zsh-syntax-highlighting"
+# Activate Dracula theme for zsh-syntax-highlighting (only in non-agent mode)
+if [[ "$AGENT_MODE" == "false" ]]; then
+	ZSH_SYNTAX_HIGHLIGHTING="zsh-syntax-highlighting"
 
-[[ -f "${HOME}/dotfiles/themes/dracula/${ZSH_SYNTAX_HIGHLIGHTING}/${ZSH_SYNTAX_HIGHLIGHTING}.sh" ]] && source "${HOME}/dotfiles/themes/dracula/${ZSH_SYNTAX_HIGHLIGHTING}/${ZSH_SYNTAX_HIGHLIGHTING}.sh"
+	[[ -f "${HOME}/dotfiles/themes/dracula/${ZSH_SYNTAX_HIGHLIGHTING}/${ZSH_SYNTAX_HIGHLIGHTING}.sh" ]] && source "${HOME}/dotfiles/themes/dracula/${ZSH_SYNTAX_HIGHLIGHTING}/${ZSH_SYNTAX_HIGHLIGHTING}.sh"
 
-unset ZSH_SYNTAX_HIGHLIGHTING
+	unset ZSH_SYNTAX_HIGHLIGHTING
 
-# Activate the zsh-syntax-highlighting zsh plugin
-ZSH_SYNTAX_HIGHLIGHTING_ZSH="${BREW_PREFIX}/share/${ZSH_SYNTAX_HIGHLIGHTING}/${ZSH_SYNTAX_HIGHLIGHTING}.zsh"
+	# Activate the zsh-syntax-highlighting zsh plugin
+	ZSH_SYNTAX_HIGHLIGHTING_ZSH="${BREW_PREFIX}/share/${ZSH_SYNTAX_HIGHLIGHTING}/${ZSH_SYNTAX_HIGHLIGHTING}.zsh"
 
-[[ -f $ZSH_SYNTAX_HIGHLIGHTING_ZSH ]] && source $ZSH_SYNTAX_HIGHLIGHTING_ZSH
+	[[ -f $ZSH_SYNTAX_HIGHLIGHTING_ZSH ]] && source $ZSH_SYNTAX_HIGHLIGHTING_ZSH
 
-unset ZSH_SYNTAX_HIGHLIGHTING_ZSH
+	unset ZSH_SYNTAX_HIGHLIGHTING_ZSH
 
-unset BREW_PREFIX
+	unset BREW_PREFIX
+else
+	unset BREW_PREFIX
+fi
 
 # Activate heroku autocomplete https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli
 eval "$(heroku autocomplete:script zsh)"
