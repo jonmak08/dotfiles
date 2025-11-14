@@ -167,6 +167,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Activate heroku autocomplete https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli
 eval "$(heroku autocomplete:script zsh)"
 
+# Activate mise
+eval "$(mise activate $(basename $SHELL))"
 
 # Gusto Init
 GUSTO_INIT='~/.gusto/init.sh'
