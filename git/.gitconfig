@@ -16,7 +16,6 @@
 	autocrlf = input
 	editor = code -w
 	quotepath = false
-	hooksPath = /Users/jon.mak/.gusto/githooks
 
 # COLORS
 # ------
