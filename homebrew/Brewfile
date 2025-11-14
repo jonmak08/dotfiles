@@ -37,7 +37,6 @@ brew 'p7zip'
 
 ## Programming languages
 # brew 'node'
-brew 'nvm'
 brew 'rbenv'
 # brew 'ruby'
 

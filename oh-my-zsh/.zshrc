@@ -167,21 +167,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Activate heroku autocomplete https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli
 eval "$(heroku autocomplete:script zsh)"
 
-# Activate nvm
-NVM="nvm"
-BREW_NVM_DIR=$(brew --prefix nvm)
-
-# Load nvm
-[[ -s "${BREW_NVM_DIR}/${NVM}.sh" ]] && \. "${BREW_NVM_DIR}/${NVM}.sh"
-
-# Load nvm bash_completion
-[[ -s "${BREW_NVM_DIR}/etc/bash_completion.d/${NVM}" ]] && \. "${BREW_NVM_DIR}/etc/bash_completion.d/${NVM}"
-
-# Load load-nvmrc hook
-[[ -f "${HOME}/dotfiles/${NVM}/load-nvmrc" ]] && source "${HOME}/dotfiles/${NVM}/load-nvmrc"
-
-unset BREW_NVM_DIR
-unset NVM
 
 # Activate rbenv
 eval "$(rbenv init - zsh)"
