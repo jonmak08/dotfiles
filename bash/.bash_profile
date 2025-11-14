@@ -60,3 +60,5 @@ GUSTO_INIT='~/.gusto/init.sh'
 
 unset GUSTO_INIT
 
+# Activate mise
+eval "$(mise activate $(basename $SHELL))"
