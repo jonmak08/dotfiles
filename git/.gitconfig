@@ -116,6 +116,10 @@
 	autoSetupRemote = true
 	default = simple
 
+[tag]
+
+	gpgSign = true
+
 [user]
 
 	email = 860951+jonmak08@users.noreply.github.com
