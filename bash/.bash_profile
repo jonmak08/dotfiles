@@ -30,22 +30,6 @@ fi;
 # Add tab completion for many Bash commands
 [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
-# Activate nvm
-NVM='nvm'
-BREW_NVM_DIR=$(brew --prefix nvm)
-
-# Load nvm
-[[ -s "${BREW_NVM_DIR}/${NVM}.sh" ]] && \. "${BREW_NVM_DIR}/${NVM}.sh"
-
-# Load nvm bash_completion
-[[ -s "${BREW_NVM_DIR}/etc/bash_completion.d/${NVM}" ]] && \. "${BREW_NVM_DIR}/etc/bash_completion.d/${NVM}"
-
-# Load cdnvm hook
-[[ -f "${HOME}/dotfiles/${NVM}/cdnvm" ]] && source "${HOME}/dotfiles/${NVM}/cdnvm"
-
-unset BREW_NVM_DIR
-unset NVM
-
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null; then
 	complete -o default -o nospace -F _git g;
@@ -81,6 +65,3 @@ GUSTO_INIT='~/.gusto/init.sh'
 
 unset GUSTO_INIT
 
-# Override cd 
-alias cd='cdnvm'
-cdnvm "$PWD" || exit
