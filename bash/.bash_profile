@@ -53,11 +53,6 @@ unset GIT_PROMPT_SH
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [[ -e "${HOME}/.ssh/config" ]] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# Activate rbenv
-if which rbenv > /dev/null; then
-	eval "$(rbenv init - bash)";
-fi
-
 # Gusto Init
 GUSTO_INIT='~/.gusto/init.sh'
 

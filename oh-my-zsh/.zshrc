@@ -168,9 +168,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(heroku autocomplete:script zsh)"
 
 
-# Activate rbenv
-eval "$(rbenv init - zsh)"
-
 # Gusto Init
 GUSTO_INIT='~/.gusto/init.sh'
 
