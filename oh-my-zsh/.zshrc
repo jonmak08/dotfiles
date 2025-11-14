@@ -161,9 +161,6 @@ unset ZSH_SYNTAX_HIGHLIGHTING_ZSH
 
 unset BREW_PREFIX
 
-# Activate brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # Activate heroku autocomplete https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli
 eval "$(heroku autocomplete:script zsh)"
 
