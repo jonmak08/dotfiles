@@ -57,6 +57,7 @@ brew 'ack'
 # brew 'findutils'
 # brew 'grep'
 # brew 'less'
+brew 'mise'
 # brew 'rename'
 
 ## Zsh theme
