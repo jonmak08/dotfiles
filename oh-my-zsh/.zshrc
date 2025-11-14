@@ -172,8 +172,6 @@ ASYNCAPI_AC_ZSH_SETUP_PATH=/Users/jon.mak/Library/Caches/@asyncapi/cli/autocompl
 
 
 # Gusto Init
-GUSTO_INIT='~/.gusto/init.sh'
+GUSTO_INIT="${HOME}/.gusto/init.sh"
 
-[[ -f $GUSTO_INIT ]] && source $GUSTO_INIT;
-
-unset GUSTO_INIT
+[[ -f $GUSTO_INIT ]] && source "$GUSTO_INIT";
