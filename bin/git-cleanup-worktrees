@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Remove temporary Cursor worktree branches
+# Usage: git cleanup-worktrees
+
+set -e
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+echo -e "${YELLOW}Cleaning up temporary worktree branches...${NC}\n"
+
+# Get list of worktrees (excluding the main one)
+worktrees=$(git worktree list --porcelain | grep -E "^worktree " | awk '{print $2}' | tail -n +2)
+
+if [ -z "$worktrees" ]; then
+    echo -e "${GREEN}No temporary worktrees found.${NC}"
+    exit 0
+fi
+
+removed_count=0
+branch_count=0
+
+# Process each worktree
+while IFS= read -r worktree_path; do
+    if [ -n "$worktree_path" ]; then
+        # Get the branch name for this worktree
+        branch=$(git worktree list --porcelain | grep -A 3 "^worktree $worktree_path" | grep "^branch " | sed 's/branch refs\/heads\///')
+
+        echo -e "Removing worktree: ${RED}$worktree_path${NC}"
+        echo -e "  Branch: ${RED}$branch${NC}"
+
+        # Remove the worktree (with force to handle modified files)
+        if git worktree remove --force "$worktree_path" 2>/dev/null; then
+            echo -e "  ${GREEN}✓ Worktree removed${NC}"
+            removed_count=$((removed_count + 1))
+
+            # Delete the branch if it still exists
+            if git show-ref --verify --quiet "refs/heads/$branch"; then
+                if git branch -D "$branch" 2>/dev/null; then
+                    echo -e "  ${GREEN}✓ Branch deleted${NC}"
+                    branch_count=$((branch_count + 1))
+                fi
+            fi
+        else
+            echo -e "  ${RED}✗ Failed to remove worktree${NC}"
+        fi
+        echo ""
+    fi
+done <<< "$worktrees"
+
+echo -e "${GREEN}Cleanup complete!${NC}"
+echo -e "Removed ${GREEN}$removed_count${NC} worktree(s) and ${GREEN}$branch_count${NC} branch(es)"
+

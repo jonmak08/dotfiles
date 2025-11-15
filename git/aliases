@@ -75,8 +75,14 @@
 	dbc = "!f() { local bn=$1; [[ -z $bn ]] && bn=$(git brn); master=$(git default-branch); [[ $bn == $master ]] && echo Cannot remove "$master" && exit; git co $master && git db $bn; }; f"
 
 	# Delete branches that have already been merged with main.
-	# a.k.a. ‘delete merged’
+	# a.k.a. 'delete merged'
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+	## Worktrees
+	##--------
+
+	# Clean up temporary worktree branches
+	cleanup-worktrees = !git-cleanup-worktrees
 
 	## Diffing
 	##--------
