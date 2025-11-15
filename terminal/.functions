@@ -153,6 +153,14 @@ function updateA {
 	dbA
 }
 
+# startA
+# Shortcut to open a new iTerm window to start the Mithrin Application with foreman
+# @arguments (optional) services to run (default: web=1,sidekiq=1,vite=1)
+function startA() {
+	local services="${1:-web=1,sidekiq=1,vite=1}"
+	iterm "${HOME}/workspace/mithrin" foreman start -f Procfile.dev -m "$services"
+}
+
 # updateZp
 # Update ZenPayroll Application and setup configurations
 function updateZp {

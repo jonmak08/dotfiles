@@ -132,9 +132,6 @@ alias dbA='bundle exec bin/rails db:migrate'
 # Install Mithrin Application Ruby and NPM dependencies
 alias installA='bundle install && rm -rf node_modules && yarn install'
 
-# startA
-# Shortcut to open a new iTerm window to compile the Mithrin Application and start the local webserver
-alias startA="iterm ${MITHRIN_DIR} yarn start"
 
 # Gusto
 # resetDb
