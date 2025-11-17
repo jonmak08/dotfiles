@@ -97,6 +97,11 @@ plugins=()
 
 source "${ZSH}/oh-my-zsh.sh"
 
+# Helper to check if a command exists
+has() {
+	command -v "$1" >/dev/null 2>&1
+}
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -182,11 +187,16 @@ else
 	unset BREW_PREFIX
 fi
 
-# Activate heroku autocomplete https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli
-eval "$(heroku autocomplete:script zsh)"
+# Activate heroku autocomplete only if heroku is installed
+if has heroku; then
+	# Activate heroku autocomplete https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli
+	eval "$(heroku autocomplete:script zsh)"
+fi
 
-# Activate mise
-eval "$(mise activate $(basename $SHELL))"
+# Activate mise only if mise is installed
+if has mise; then
+	eval "$(mise activate $(basename $SHELL))"
+fi
 
 # AsyncAPI CLI Autocomplete
 ASYNCAPI_AC_ZSH_SETUP_PATH=/Users/jon.mak/Library/Caches/@asyncapi/cli/autocomplete/zsh_setup && test -f $ASYNCAPI_AC_ZSH_SETUP_PATH && source $ASYNCAPI_AC_ZSH_SETUP_PATH; # asyncapi autocomplete setup
