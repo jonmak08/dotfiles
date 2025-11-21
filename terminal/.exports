@@ -15,3 +15,11 @@ export HISTFILESIZE="${HISTSIZE}";
 
 ## Omit duplicates and commands that begin with a space from history.
 export HISTCONTROL='ignoreboth';
+
+# Gusto
+## Self Managed SSH Keys
+## https://gustohq.atlassian.net/wiki/spaces/ED/pages/423755866/Signed+Git+Commits+Migration+Guide#Using-GPG-Keys
+export GUSTO_SSH_SELF_MANAGED=1
+
+# AWS Profile
+export AWS_PROFILE=tax-credits-eng-gusto-main

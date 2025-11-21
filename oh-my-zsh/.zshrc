@@ -201,8 +201,6 @@ fi
 # AsyncAPI CLI Autocomplete
 ASYNCAPI_AC_ZSH_SETUP_PATH=/Users/jon.mak/Library/Caches/@asyncapi/cli/autocomplete/zsh_setup && test -f $ASYNCAPI_AC_ZSH_SETUP_PATH && source $ASYNCAPI_AC_ZSH_SETUP_PATH; # asyncapi autocomplete setup
 
-export AWS_PROFILE=tax-credits-eng-gusto-main
-
 # Gusto Init
 GUSTO_INIT="${HOME}/.gusto/init.sh"
 
