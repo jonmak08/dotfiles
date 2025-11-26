@@ -34,10 +34,12 @@ alias erebor="cd ${EREBOR_DIR}"
 MITHRIN_DIR="${WORKSPACE_DIR}/mithrin"
 ZEN_PAYROLL_DIR="${WORKSPACE_DIR}/zenpayroll"
 WEB_DIR="${WORKSPACE_DIR}/web"
+ADMISIO_DIR="${WORKSPACE_DIR}/admisio/admisio"
 
 alias mithrin="cd ${MITHRIN_DIR}"
 alias zenpayroll="cd ${ZEN_PAYROLL_DIR}"
 alias web="cd ${WEB_DIR}"
+alias admisio="cd ${ADMISIO_DIR}"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
@@ -147,4 +149,5 @@ alias startZp="iterm ${ZEN_PAYROLL_DIR} bin/server"
 unset ZEN_PAYROLL_DIR
 unset MITHRIN_DIR
 unset WEB_DIR
+unset ADMISIO_DIR
 unset WORKSPACE_DIR
