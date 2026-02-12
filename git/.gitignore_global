@@ -49,3 +49,7 @@ Thumbs.db
 # Custom files #
 ######################
 *_private
+
+# SpecStory auto-save files #
+######################
+.specstory/**
