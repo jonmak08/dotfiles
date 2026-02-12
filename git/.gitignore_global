@@ -53,3 +53,9 @@ Thumbs.db
 # SpecStory auto-save files #
 ######################
 .specstory/**
+
+# Cursor files #
+######################
+.cursor/**
+.cursorignore
+.cursorindexingignore
