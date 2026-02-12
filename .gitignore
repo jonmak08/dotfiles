@@ -1,0 +1,3 @@
+# Private files containing secrets/tokens (dotfiles-specific)
+*_private
+*_private.*
