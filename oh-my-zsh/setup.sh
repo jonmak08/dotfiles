@@ -17,6 +17,12 @@ if test ! $(which omz); then
   echo 'Oh My Zsh installation complete.'
 fi
 
+# Remove ~/.zshenv if it exists
+[[ -f "${HOME}/.zshenv" ]] && rm -rf "${HOME}/.zshenv"
+
+# Create symlink of ~/.zshenv from ~/dotfiles/oh-my-zsh/.zshenv
+ln -s "${DOT_FILES_OH_MY_ZSH_DIR}/.zshenv" "${HOME}/.zshenv"
+
 # Remove ~/.zshrc if it exists
 [[ -f "${HOME}/.zshrc" ]] && rm -rf "${HOME}/.zshrc"
 
