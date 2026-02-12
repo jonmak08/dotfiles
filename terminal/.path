@@ -1,2 +1,5 @@
 # Load dotfiles binaries
 export PATH="${HOME}/dotfiles/bin:$PATH"
+
+# Load ./local/bin binaries
+export PATH="${HOME}/.local/bin:$PATH"
