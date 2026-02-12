@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../workspace/web"
+		}
+	],
+	"settings": {
+		"typescript.tsserver.maxTsServerMemory": 16384,
+		"typescript.enablePromptUseWorkspaceTsdk": true,
+		"typescript.tsdk": "node_modules/typescript/lib",
+		"typescript.tsserver.nodePath": "/Users/jon.mak/.local/share/mise/installs/node/22.19.0/bin/node"
+	}
+}
