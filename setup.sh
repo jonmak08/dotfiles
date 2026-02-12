@@ -25,3 +25,6 @@ echo 'Setting up your Mac...'
 
 # Set macOS preferences - we will run this last because this will reload the shell
 # ./macos/setup.sh
+
+# Setup Applications (Cursor, VSCode, Sublime Text, etc.)
+./Application\ Support/setup.sh
