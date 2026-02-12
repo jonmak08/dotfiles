@@ -2,8 +2,8 @@
 
 echo 'Setting up Applications...'
 
-# Setup Code
-./Application\ Support/Code/setup.sh
+# Setup Cursor (also sets up VSCode to share settings)
+./Application\ Support/Cursor/setup.sh
 
 # Setup Sublime Text
 ./Application\ Support/Sublime\ Text/setup.sh
