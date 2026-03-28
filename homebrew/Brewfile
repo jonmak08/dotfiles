@@ -1,6 +1,7 @@
 # Taps
 tap 'homebrew/bundle'
 tap 'homebrew/services'
+tap 'atlassian-labs/acli'
 
 # Binaries
 ## CLI tools
