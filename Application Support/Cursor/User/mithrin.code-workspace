@@ -4,5 +4,28 @@
 			"path": "../../../../workspace/mithrin"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#3f4a52",
+			"activityBar.background": "#3f4a52",
+			"activityBar.foreground": "#e7e7e7",
+			"activityBar.inactiveForeground": "#e7e7e799",
+			"activityBarBadge.background": "#180811",
+			"activityBarBadge.foreground": "#e7e7e7",
+			"commandCenter.border": "#e7e7e799",
+			"sash.hoverBorder": "#3f4a52",
+			"statusBar.background": "#293035",
+			"statusBar.foreground": "#e7e7e7",
+			"statusBarItem.hoverBackground": "#3f4a52",
+			"statusBarItem.remoteBackground": "#293035",
+			"statusBarItem.remoteForeground": "#e7e7e7",
+			"titleBar.activeBackground": "#293035",
+			"titleBar.activeForeground": "#e7e7e7",
+			"titleBar.inactiveBackground": "#29303599",
+			"titleBar.inactiveForeground": "#e7e7e799"
+		},
+		"peacock.color": "#293035",
+		"specstory.cloudSync.enabled": "always"
+	},
+
 }
