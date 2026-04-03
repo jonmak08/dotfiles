@@ -116,5 +116,6 @@
       "id": "E4E7E67B-678B-491A-9CF8-69E868CFC72D",
       "isDefault": true
     }
-  ]
+  ],
+  "cursor.composer.shouldChimeAfterChatFinishes": true
 }
