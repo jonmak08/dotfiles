@@ -108,5 +108,6 @@
       "path": "/bin/zsh",
       "args": ["-l"]
     }
-  }
+  },
+  "githubPullRequests.pullBranch": "never"
 }
