@@ -8,6 +8,7 @@
 - [epdsupport.md](epdsupport.md) — EPDSUPPORT plugin operational notes
 - [feedback_slack_header.md](feedback_slack_header.md) — All Slack messages must use `:robot_face: *AI Generated Response*` header
 - [feedback_pr_reviewers.md](feedback_pr_reviewers.md) — Full PR checklist: add reviewers, transition Jira, use PR template
+- [feedback_pr_table_columns.md](feedback_pr_table_columns.md) — PR tables: "AI Review" column + human "Comments" column with names
 
 ### Plugins
 - **pr-monitor** — PR comment monitoring and team code review
