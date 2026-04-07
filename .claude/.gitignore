@@ -1,0 +1,28 @@
+# Ignore everything by default
+*
+
+# Track configuration
+!.gitignore
+!settings.json
+!settings.local.json
+
+# Track custom skills
+!skills/
+!skills/**
+
+# Track global memory
+!memory/
+!memory/**
+
+# Track local plugin source (your development repos only)
+!plugins/
+!plugins/marketplaces/
+!plugins/marketplaces/epdsupport-local/
+!plugins/marketplaces/epdsupport-local/**
+# pr-monitor-local is its own git repo — tracked separately
+
+# Track per-project memory (but not transcripts/sessions)
+!projects/
+!projects/*/
+!projects/*/memory/
+!projects/*/memory/**

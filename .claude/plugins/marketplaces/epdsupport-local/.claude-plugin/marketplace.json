@@ -1,0 +1,13 @@
+{
+  "name": "epdsupport-local",
+  "owner": {
+    "name": "R&D Tax Credits Team"
+  },
+  "plugins": [
+    {
+      "name": "epdsupport",
+      "source": "./epdsupport",
+      "description": "EPDSUPPORT Slack channel automation for R&D Tax Credits — triage, investigate, respond, poll"
+    }
+  ]
+}
