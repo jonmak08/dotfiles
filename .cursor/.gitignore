@@ -1,0 +1,14 @@
+# Ignore everything by default
+*
+
+# Track config and skills
+!.gitignore
+!mcp.json
+!skills-cursor/
+!skills-cursor/**
+!skills/
+!skills/**
+!commands/
+!commands/**
+!rules/
+!rules/**
