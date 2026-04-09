@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "../../../../workspace/gusto-org-catalog"
+		}
+	],
+	"settings": {
+		"specstory.cloudSync.enabled": "always"
+	}
+}
