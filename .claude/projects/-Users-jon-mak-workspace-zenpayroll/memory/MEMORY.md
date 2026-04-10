@@ -1,3 +1,0 @@
-- [Redash API Key Setup](reference_redash_key.md) — REDASH_KEY should be set from REDASH_API_KEY env var
-- [Slack AI Header](feedback_slack_header.md) — All Slack messages from Claude must have bold :robot_face: AI Generated Response header + horizontal rule
-- [PR Comment Resolve Workflow](feedback_pr_comment_resolve.md) — After replying to PR comments, add thumbs up reaction and resolve the thread
