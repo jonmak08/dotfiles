@@ -53,3 +53,7 @@ Thumbs.db
 # SpecStory auto-save files #
 ######################
 .specstory/**
+
+# Claude Code working state #
+######################
+tmp/
