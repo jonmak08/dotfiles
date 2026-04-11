@@ -86,6 +86,7 @@
   "typescript.suggest.autoImports": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.title": "${activeEditorShort}${separator}${rootName}${dirty}",
+  "window.titleBarStyle": "custom",
   "workbench.colorTheme": "Dracula Theme",
   "workbench.commandPalette.preserveInput": true,
   "workbench.editor.enablePreview": false,
@@ -116,6 +117,5 @@
       "id": "E4E7E67B-678B-491A-9CF8-69E868CFC72D",
       "isDefault": true
     }
-  ],
-  "cursor.composer.shouldChimeAfterChatFinishes": true
+  ]
 }
