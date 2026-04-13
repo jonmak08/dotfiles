@@ -56,4 +56,5 @@ Thumbs.db
 
 # Claude Code working state #
 ######################
+.claude/settings.local.json
 tmp/
