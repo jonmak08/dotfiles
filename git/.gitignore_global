@@ -58,3 +58,8 @@ Thumbs.db
 ######################
 .claude/settings.local.json
 tmp/
+
+# Cursor IDE indexing #
+######################
+.cursorignore
+.cursorindexingignore
