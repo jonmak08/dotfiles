@@ -118,13 +118,12 @@ function pkill {
 	#ps -ef | grep PROCESS | grep -v grep | awk '{print $2}' | xargs kill -9
 }
 
-# railsC
-# Connect to the Rails console on a remote server
-# @arguments server
-function railsC() {
+# prodShell
+# Mithrin: remote shell on production-west via bin/toolbox (run rails c yourself once connected)
+function prodShell() {
 	mithrin
 
-	./devops/scripts/ecs_execute.rb  -a "$1" -s web -- rails c
+	bin/toolbox console production-west
 }
 
 # resolve
