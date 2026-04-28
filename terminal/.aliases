@@ -129,9 +129,9 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 
 # Ardius
 
-# dbA
-# Update Mithrin Application DB
-alias dbA='bundle exec bin/rails db:migrate'
+# migrateDb
+# Run Rails migrations against local Mithrin DB (run from repo root, e.g. after mithrin)
+alias migrateDb='bundle exec bin/rails db:migrate'
 
 # installA
 # Install Mithrin Application Ruby and NPM dependencies
