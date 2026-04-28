@@ -137,6 +137,10 @@ alias migrateDb='bundle exec bin/rails db:migrate'
 # Install Mithrin Application Ruby and NPM dependencies
 alias installA='bundle install && rm -rf node_modules && yarn install'
 
+# prodDbRestore
+# aws sso login, then download latest clean production snapshot and restore into local mithrin_development
+alias prodDbRestore="( cd ${MITHRIN_DIR} && aws sso login --profile ardius-admin-ardius-prod && AWS_PROFILE=ardius-admin-ardius-prod bundle exec devops/lib/db_copy/runner.rb --download-to /tmp --dest-url postgresql://localhost:5432/mithrin_development --verbose )"
+
 
 # Gusto
 # resetDb
