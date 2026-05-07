@@ -177,7 +177,7 @@ function updateA {
 # @arguments (optional) services to run (default: web=1,sidekiq=1,vite=1)
 function startA() {
 	local services="${1:-web=1,sidekiq=1,vite=1}"
-	iterm "${HOME}/workspace/mithrin" foreman start -f Procfile.dev -m "$services"
+	iterm "${WORKSPACE_DIR}/mithrin" foreman start -f Procfile.dev -m "$services"
 }
 
 # updateZp
