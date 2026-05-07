@@ -18,8 +18,7 @@ alias y="yarn"
 alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -AhlFo --color --group-directories-first"
 
 # Directories
-WORKSPACE_DIR="${HOME}/workspace"
-
+# WORKSPACE_DIR is exported from terminal/.exports
 
 alias dotfiles="cd ${HOME}/dotfiles"
 alias library="cd ${HOME}/Library"
@@ -155,4 +154,3 @@ unset ZEN_PAYROLL_DIR
 unset MITHRIN_DIR
 unset WEB_DIR
 unset ADMISIO_DIR
-unset WORKSPACE_DIR
