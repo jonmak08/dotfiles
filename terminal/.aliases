@@ -23,7 +23,6 @@ alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -AhlFo --color --group-di
 alias dotfiles="cd ${HOME}/dotfiles"
 alias library="cd ${HOME}/Library"
 alias workspace="cd ${WORKSPACE_DIR}"
-alias ai-tools="cd ${WORKSPACE_DIR}/ai-tools"
 
 # Gumshoe
 EREBOR_DIR="${WORKSPACE_DIR}/erebor"

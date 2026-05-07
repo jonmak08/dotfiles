@@ -1,3 +1,23 @@
+# ai-tools
+# cd into whichever ai-tools workspace directory exists
+# (gumshoe-ai-tools or gusto-ai-tools). Errors if both or neither exist.
+function ai-tools() {
+	local gumshoe="${WORKSPACE_DIR}/gumshoe-ai-tools"
+	local gusto="${WORKSPACE_DIR}/gusto-ai-tools"
+
+	if [ -d "$gumshoe" ] && [ -d "$gusto" ]; then
+		echo "ai-tools: both gumshoe-ai-tools and gusto-ai-tools exist; cd explicitly" >&2
+		return 1
+	elif [ -d "$gumshoe" ]; then
+		cd "$gumshoe"
+	elif [ -d "$gusto" ]; then
+		cd "$gusto"
+	else
+		echo "ai-tools: no gumshoe-ai-tools or gusto-ai-tools directory found in ${WORKSPACE_DIR}" >&2
+		return 1
+	fi
+}
+
 # bashC
 # Connect to the bash terminal on a remote server
 # @arguments server
