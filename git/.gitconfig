@@ -15,6 +15,7 @@
 
 	autocrlf = input
 	editor = code -w
+	ignorecase = false
 	quotepath = false
 
 # COLORS
@@ -81,6 +82,7 @@
 [gpg]
 
 	program = gpg
+	format = openpgp
 
 [commit]
 
@@ -129,5 +131,4 @@
 
 [maintenance]
 
-	repo = /Users/jon.mak/workspace/zenpayroll
 	repo = /Users/jon.mak/workspace/web
