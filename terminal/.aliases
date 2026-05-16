@@ -130,7 +130,7 @@ alias installA='bundle install && rm -rf node_modules && yarn install'
 
 # prodDbRestore
 # aws sso login, then download latest clean production snapshot and restore into local mithrin_development
-alias prodDbRestore='( cd ${WORKSPACE_DIR}/mithrin && aws sso login --profile ardius-admin-ardius-prod && AWS_PROFILE=ardius-admin-ardius-prod bundle exec devops/lib/db_copy/runner.rb --download-to /tmp --dest-url postgresql://localhost:5432/mithrin_development --verbose )'
+alias prodDbRestore='( cd ${WORKSPACE_DIR}/mithrin && aws sso login --profile ardius-dev-ardius-prod && AWS_PROFILE=ardius-dev-ardius-prod bundle exec devops/lib/db_copy/runner.rb --download-to /tmp --dest-url postgresql://localhost:5432/mithrin_development --verbose )'
 
 
 # Gusto
