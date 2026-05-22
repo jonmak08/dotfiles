@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# git coc <branch>
+#
+# Checkout a branch, first removing any worktree that currently holds it
+# (so the branch lock is released before checkout). The branch itself and
+# all its commits are preserved — only the worktree directory is removed.
+#
+# Intended pairing: keep the dev stack running from the main repo. When you
+# want to smoke test a branch that lives in a worktree, run `git coc <branch>`
+# in main — the worktree is cleaned up and the branch is checked out in one
+# step.
+#
+# Usage:
+#   git coc TC-6149
+#   git coc some-feature
+
+set -e
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+branch="$1"
+
+if [ -z "$branch" ]; then
+    echo -e "${RED}Usage: git coc <branch>${NC}" >&2
+    exit 1
+fi
+
+# Find any worktree holding this branch. `git worktree list --porcelain`
+# emits records separated by blank lines:
+#   worktree /path/to/wt
+#   HEAD <sha>
+#   branch refs/heads/<branch>
+worktree_path=$(
+  git worktree list --porcelain \
+    | awk -v target="refs/heads/$branch" '
+        /^worktree / { path = $2 }
+        /^branch /   { if ($2 == target) { print path; exit } }
+      '
+)
+
+if [ -n "$worktree_path" ]; then
+    # Don't allow removing the main worktree by accident — `git worktree remove`
+    # would refuse anyway, but a clear message is friendlier.
+    main_worktree=$(git rev-parse --show-toplevel)
+    if [ "$worktree_path" = "$main_worktree" ]; then
+        echo -e "${RED}Branch '$branch' is checked out in the current worktree ($main_worktree).${NC}" >&2
+        echo -e "${RED}Switch to a different branch first, then re-run.${NC}" >&2
+        exit 1
+    fi
+
+    echo -e "${YELLOW}Branch '$branch' is held by worktree:${NC} $worktree_path"
+    echo -e "${YELLOW}Removing the worktree (branch + commits are preserved)…${NC}"
+    git worktree remove "$worktree_path"
+    echo -e "${GREEN}✓ Worktree removed${NC}"
+fi
+
+echo -e "${YELLOW}Checking out '$branch'…${NC}"
+git checkout "$branch"

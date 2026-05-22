@@ -197,3 +197,17 @@ function updateZp {
 
 	bin/setup
 }
+
+# git
+# Wrapper around the real git binary. If the first (and only) arg looks like
+# a Jira-style ticket key (e.g. TC-6149, TCENG-486, ENG-1234), dispatch to
+# `git coc <branch>` — which removes any worktree holding the branch and
+# then checks it out. Otherwise pass through to the real git unchanged.
+# Pairs with: bin/git-coc, git alias `coc` in dotfiles/git/aliases.
+function git() {
+	if [[ $# -eq 1 && "$1" =~ ^[A-Z]+(-[A-Z0-9]+)?-[0-9]+$ ]]; then
+		command git coc "$1"
+	else
+		command git "$@"
+	fi
+}

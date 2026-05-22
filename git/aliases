@@ -8,6 +8,13 @@
 	# Checkout last branch
 	col = checkout -
 
+	# Checkout, removing any worktree currently holding the branch first.
+	# Run this in the main repo when you want to smoke-test a branch whose
+	# work was done in a worktree. Branch + commits are preserved; only the
+	# worktree directory is removed.
+	# eg. git coc TC-6149
+	coc = !git-coc
+
 	# Branch
 	br = branch
 
