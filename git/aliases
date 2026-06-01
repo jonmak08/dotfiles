@@ -69,8 +69,8 @@
 	## Deleting
 	##--------
 
-	# Delete a local branch
-	db = branch -D
+	# Delete a local branch (removes the branch's worktree first if it has one)
+	db = !git-db
 
 	# Delete a remote branch
 	db-remote = !sh -c 'git push origin :$0'

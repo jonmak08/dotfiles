@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Delete local branch(es). If a branch is checked out in a worktree, remove
+# that worktree first so `git branch -D` isn't blocked.
+#
+# Worktree removal is NOT forced: a worktree with uncommitted/untracked changes
+# (or the one you're currently in) will refuse to be removed, and that branch is
+# left intact. Use `git worktree remove --force` or `git cleanup-worktrees` if
+# you really want to discard worktree changes.
+#
+# Usage: git db <branch> [<branch>...]
+
+if [ "$#" -eq 0 ]; then
+    echo "usage: git db <branch> [<branch>...]" >&2
+    exit 1
+fi
+
+status=0
+
+for branch in "$@"; do
+    # Path of the worktree (if any) that has this branch checked out.
+    worktree=$(git worktree list --porcelain \
+        | grep -B2 -x "branch refs/heads/$branch" \
+        | sed -n 's/^worktree //p')
+
+    if [ -n "$worktree" ]; then
+        echo "Removing worktree for '$branch': $worktree"
+        if ! git worktree remove "$worktree"; then
+            echo "  ✗ worktree has changes or is in use; leaving '$branch' intact" >&2
+            status=1
+            continue
+        fi
+    fi
+
+    git branch -D "$branch" || status=1
+done
+
+exit $status
