@@ -5,6 +5,13 @@
 # Default Editor
 export EDITOR='mate -w'
 
+# Force a UTF-8 locale. Without this, LC_CTYPE defaults to "C" and Ruby's
+# default external encoding becomes US-ASCII, which breaks tools that read
+# files with non-ASCII bytes (e.g. mithrin's pre-push Danger gate fails with
+# "invalid byte sequence in US-ASCII" while scanning db/migrate).
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$TTY
