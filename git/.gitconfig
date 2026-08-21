@@ -136,3 +136,7 @@
 [credential "https://git.heroku.com"]
 
 	helper = !heroku git:credentials
+
+[includeIf "gitdir:~/workspace/mithrin/"]
+
+	path = ~/dotfiles/git/gitconfig_gusto
