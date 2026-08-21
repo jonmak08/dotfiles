@@ -132,3 +132,7 @@
 [maintenance]
 
 	repo = /Users/jon.mak/workspace/web
+
+[credential "https://git.heroku.com"]
+
+	helper = !heroku git:credentials
