@@ -29,7 +29,7 @@ export HISTCONTROL='ignoreboth';
 export GUSTO_SSH_SELF_MANAGED=1
 
 # AWS Profile
-export AWS_PROFILE=tax-credits-eng-gusto-main
+export AWS_PROFILE=tax-credits-engineering-gusto-main 
 
 # Workspace root (used by aliases and functions)
 export WORKSPACE_DIR="${HOME}/workspace"
