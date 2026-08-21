@@ -63,3 +63,5 @@ tmp/
 ######################
 .cursorignore
 .cursorindexingignore
+
+**/.claude/settings.local.json
