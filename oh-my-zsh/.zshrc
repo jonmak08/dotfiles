@@ -193,11 +193,6 @@ if has heroku; then
 	eval "$(heroku autocomplete:script zsh)"
 fi
 
-# Activate mise only if mise is installed
-if has mise; then
-	eval "$(mise activate $(basename $SHELL))"
-fi
-
 # AsyncAPI CLI Autocomplete
 ASYNCAPI_AC_ZSH_SETUP_PATH=/Users/jon.mak/Library/Caches/@asyncapi/cli/autocomplete/zsh_setup && test -f $ASYNCAPI_AC_ZSH_SETUP_PATH && source $ASYNCAPI_AC_ZSH_SETUP_PATH; # asyncapi autocomplete setup
 
